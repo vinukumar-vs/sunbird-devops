@@ -61,7 +61,7 @@ desktop_app_prefix: /desktop
 license_api_prefix: /license
 
 # Service URLs
-knowledge_mw_service_url: "http://knowledge-mw-service.{{namespace}}.svc.cluster.local:9000"
+knowledge_mw_service_url: "http://knowledge-mw-service.{{namespace}}.svc.cluster.local:5000"
 learning_service_url: "http://learner-service.{{namespace}}.svc.cluster.local:9000"
 vm_learning_service_url: "http://{{learningservice_ip}}:8080/learning-service"
 telemetry_service_url: "http://telemetry-service.{{namespace}}.svc.cluster.local:9001"
