@@ -15,3 +15,6 @@
     ```
     curl http://localhost:12000/admin-api/consumers/<name>/jwt
     ```
+5. Published contents are not visible in library  
+   in KP machine run the below query to check the content is synced to ES
+   `curl localhost:9200/compositesearch/cs/<do_idxxx>?pretty`
