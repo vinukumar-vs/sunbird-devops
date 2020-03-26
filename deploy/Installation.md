@@ -52,7 +52,7 @@ Three 2vCpus 8GB(RAM) VMs 50G(HardDisk)
     > It is advised to run the installation script in tmux session, as if the network is bad, installation may get interrupted.
     For starting a tmux session, `tmux` and once the installation starts `ctrl+b then d` will detach the session.  
     You can attach the session back with `tmux a`
-    4. cd sunbird-devops/deploy && bash -x install.sh | tee -a ~/sunbird.log
+    4. cd ~/sunbird-devops/deploy && bash -x install.sh | tee -a ~/sunbird.log
  
 **example inventory segregation**
 
