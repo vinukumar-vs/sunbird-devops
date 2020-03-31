@@ -93,7 +93,7 @@ kong_apis:
   - name: ItemSetAPIs
     uris: "{{ itemset_prefix }}/v1"
     upstream_url: "{{ knowledge_mw_service_url }}/itemset/v1"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -110,7 +110,7 @@ kong_apis:
   - name: PrivateContentCreateAPIs
     uris: "{{ private_content_prefix }}/v3/create"
     upstream_url: "{{ content_service_url }}/content/v3/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -127,7 +127,7 @@ kong_apis:
   - name: PrivateContentUpdateAPIs
     uris: "{{ private_content_prefix }}/v3/update"
     upstream_url: "{{ content_service_url }}/content/v3/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -144,7 +144,7 @@ kong_apis:
   - name: PrivateContentReadAPIs
     uris: "{{ private_content_prefix }}/v3/read"
     upstream_url: "{{ content_service_url }}/content/v3/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -161,7 +161,7 @@ kong_apis:
   - name: createContent
     uris: "{{ content_prefix }}/v1/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -178,7 +178,7 @@ kong_apis:
   - name: searchContent
     uris: "{{ content_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -192,7 +192,7 @@ kong_apis:
   - name: updateContent
     uris: "{{ content_prefix }}/v1/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -209,7 +209,7 @@ kong_apis:
   - name: readContent
     uris: "{{ content_prefix }}/v1/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -223,7 +223,7 @@ kong_apis:
   - name: submitContentForReview
     uris: "{{ content_prefix }}/v1/review"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/review"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -240,7 +240,7 @@ kong_apis:
   - name: publishContent
     uris: "{{ content_prefix }}/v1/publish"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/publish"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -257,7 +257,7 @@ kong_apis:
   - name: uploadContent
     uris: "{{ content_prefix }}/v1/upload"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -274,7 +274,7 @@ kong_apis:
   - name: retireContent
     uris: "{{ content_prefix }}/v1/retire"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/retire"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -291,7 +291,7 @@ kong_apis:
   - name: createCourse
     uris: "{{ course_service_prefix }}/v1/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -308,7 +308,7 @@ kong_apis:
   - name: searchCourse
     uris: "{{ course_service_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -325,7 +325,7 @@ kong_apis:
   - name: updateCourse
     uris: "{{ course_service_prefix }}/v1/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -342,7 +342,7 @@ kong_apis:
   - name: readCourse
     uris: "{{ course_service_prefix }}/v1/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -359,7 +359,7 @@ kong_apis:
   - name: submitCourseForReview
     uris: "{{ course_service_prefix }}/v1/review"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/review"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -376,7 +376,7 @@ kong_apis:
   - name: publishCourse
     uris: "{{ course_service_prefix }}/v1/publish"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/publish"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -393,7 +393,7 @@ kong_apis:
   - name: retireCourse
     uris: "{{ course_service_prefix }}/v1/retire"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/retire"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -410,7 +410,7 @@ kong_apis:
   - name: getCourseHierarchy
     uris: "{{ course_service_prefix }}/v1/hierarchy"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/course/hierarchy"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -424,7 +424,7 @@ kong_apis:
   - name: courseEnrolment
     uris: "{{ course_service_prefix }}/v1/enrol"
     upstream_url: "{{ lms_service_url }}/v1/course/enroll"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -441,7 +441,7 @@ kong_apis:
   - name: courseUnEnrolment
     uris: "{{ course_service_prefix }}/v1/unenrol"
     upstream_url: "{{ lms_service_url }}/v1/course/unenroll"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -458,7 +458,7 @@ kong_apis:
   - name: listCourseEnrollments
     uris: "{{ course_service_prefix }}/v1/user/enrollment/list"
     upstream_url: "{{ lms_service_url }}/v1/user/courses/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -475,7 +475,7 @@ kong_apis:
   - name: readCourseEnrollment
     uris: "{{ course_service_prefix }}/v1/user/enrollment/read"
     upstream_url: "{{ lms_service_url }}/v1/user/courses/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -492,7 +492,7 @@ kong_apis:
   - name: readContentState
     uris: "{{ course_service_prefix }}/v1/content/state/read"
     upstream_url: "{{ lms_service_url }}/v1/content/state/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -509,7 +509,7 @@ kong_apis:
   - name: updateContentState
     uris: "{{ course_service_prefix }}/v1/content/state/update"
     upstream_url: "{{ lms_service_url }}/v1/content/state/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -526,7 +526,7 @@ kong_apis:
   - name: createUser
     uris: "{{ user_service_prefix }}/v1/create"
     upstream_url: "{{ learning_service_url }}/v1/user/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -543,7 +543,7 @@ kong_apis:
   - name: createUserVersion2
     uris: "{{ user_service_prefix }}/v2/create"
     upstream_url: "{{ learning_service_url }}/v2/user/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -560,7 +560,7 @@ kong_apis:
   - name: updateUser
     uris: "{{ user_service_prefix }}/v1/update"
     upstream_url: "{{ learning_service_url }}/v1/user/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -577,7 +577,7 @@ kong_apis:
   - name: getUserProfile
     uris: "{{ user_service_prefix }}/v1/read"
     upstream_url: "{{ learning_service_url }}/v1/user/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -594,7 +594,7 @@ kong_apis:
   - name: getUserProfileV2
     uris: "{{ user_service_prefix }}/v2/read"
     upstream_url: "{{ learning_service_url }}/v2/user/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -611,7 +611,7 @@ kong_apis:
   - name: searchUser
     uris: "{{ user_service_prefix }}/v1/search"
     upstream_url: "{{ learning_service_url }}/v1/user/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -628,7 +628,7 @@ kong_apis:
   - name: createPage
     uris: "{{ data_service_prefix }}/v1/page/create"
     upstream_url: "{{ lms_service_url }}/v1/page/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -645,7 +645,7 @@ kong_apis:
   - name: updatePage
     uris: "{{ data_service_prefix }}/v1/page/update"
     upstream_url: "{{ lms_service_url }}/v1/page/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -662,7 +662,7 @@ kong_apis:
   - name: getPageSettings
     uris: "{{ data_service_prefix }}/v1/page/read"
     upstream_url: "{{ lms_service_url }}/v1/page/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -679,7 +679,7 @@ kong_apis:
   - name: dialAssemble
     uris: "{{ data_service_prefix }}/v1/dial/assemble"
     upstream_url: "{{ lms_service_url }}/v1/page/assemble"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -693,7 +693,7 @@ kong_apis:
   - name: assemblePage
     uris: "{{ data_service_prefix }}/v1/page/assemble"
     upstream_url: "{{ lms_service_url }}/v1/page/assemble"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -707,7 +707,7 @@ kong_apis:
   - name: createNote
     uris: "{{ notes_service_prefix }}/v1/create"
     upstream_url: "{{ learning_service_url }}/v1/note/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -724,7 +724,7 @@ kong_apis:
   - name: updateNote
     uris: "{{ notes_service_prefix }}/v1/update"
     upstream_url: "{{ learning_service_url }}/v1/note/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -741,7 +741,7 @@ kong_apis:
   - name: readNote
     uris: "{{ notes_service_prefix }}/v1/read"
     upstream_url: "{{ learning_service_url }}/v1/note/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -758,7 +758,7 @@ kong_apis:
   - name: searchNotes
     uris: "{{ notes_service_prefix }}/v1/search"
     upstream_url: "{{ learning_service_url }}/v1/note/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -775,7 +775,7 @@ kong_apis:
   - name: createOrg
     uris: "{{ org_service_prefix }}/v1/create"
     upstream_url: "{{ learning_service_url }}/v1/org/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -792,7 +792,7 @@ kong_apis:
   - name: updateOrg
     uris: "{{ org_service_prefix }}/v1/update"
     upstream_url: "{{ learning_service_url }}/v1/org/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -809,7 +809,7 @@ kong_apis:
   - name: readOrg
     uris: "{{ org_service_prefix }}/v1/read"
     upstream_url: "{{ learning_service_url }}/v1/org/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -826,7 +826,7 @@ kong_apis:
   - name: searchOrg
     uris: "{{ org_service_prefix }}/v1/search"
     upstream_url: "{{ learning_service_url }}/v1/org/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -840,7 +840,7 @@ kong_apis:
   - name: addMember
     uris: "{{ org_service_prefix }}/v1/member/add"
     upstream_url: "{{ learning_service_url }}/v1/org/member/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -857,7 +857,7 @@ kong_apis:
   - name: removeMember
     uris: "{{ org_service_prefix }}/v1/member/remove"
     upstream_url: "{{ learning_service_url }}/v1/org/member/remove"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -874,7 +874,7 @@ kong_apis:
   - name: echo
     uris: "{{ echo_service_prefix }}"
     upstream_url: "{{ echo_service_url }}"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -891,7 +891,7 @@ kong_apis:
   - name: createPageSection
     uris: "{{ data_service_prefix }}/v1/page/section/create"
     upstream_url: "{{ lms_service_url }}/v1/page/section/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -908,7 +908,7 @@ kong_apis:
   - name: updatePageSection
     uris: "{{ data_service_prefix }}/v1/page/section/update"
     upstream_url: "{{ lms_service_url }}/v1/page/section/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -925,7 +925,7 @@ kong_apis:
   - name: listPageSections
     uris: "{{ data_service_prefix }}/v1/page/section/list"
     upstream_url: "{{ lms_service_url }}/v1/page/section/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -942,7 +942,7 @@ kong_apis:
   - name: readPageSection
     uris: "{{ data_service_prefix }}/v1/page/section/read"
     upstream_url: "{{ lms_service_url }}/v1/page/section/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -959,7 +959,7 @@ kong_apis:
   - name: readRoleMapping
     uris: "{{ data_service_prefix }}/v1/role/read"
     upstream_url: "{{ learning_service_url }}/v1/role/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -976,7 +976,7 @@ kong_apis:
   - name: updateOrgStatus
     uris: "{{ org_service_prefix }}/v1/status/update"
     upstream_url: "{{ learning_service_url }}/v1/org/status/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -993,7 +993,7 @@ kong_apis:
   - name: readUserProfile
     uris: "{{ user_service_prefix }}/v1/profile/read"
     upstream_url: "{{ learning_service_url }}/v1/user/getuser"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1010,7 +1010,7 @@ kong_apis:
   - name: registerMobileApp
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_app/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_app/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1027,7 +1027,7 @@ kong_apis:
   - name: registerMobileDevice
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_device/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_device/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1044,7 +1044,7 @@ kong_apis:
   - name: registerDesktopApp
     uris: "{{ api_manager_perfix }}/v1/consumer/desktop_app/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/desktop_app/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1061,7 +1061,7 @@ kong_apis:
   - name: registerDesktopDevice
     uris: "{{ api_manager_perfix }}/v1/consumer/desktop_device/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/desktop_device/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1078,7 +1078,7 @@ kong_apis:
   - name: registerMobileAppOpenRAP
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_app_openrap/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_app_openrap/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1096,7 +1096,7 @@ kong_apis:
   - name: registerMobileDeviceOpenRAP
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_device_openrap/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_device_openrap/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1114,7 +1114,7 @@ kong_apis:
   - name: compositeSearch
     uris: "{{ composite_service_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1131,7 +1131,7 @@ kong_apis:
   - name: listTerms
     uris: "{{ meta_service_prefix }}/v1/terms/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/terms/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1148,7 +1148,7 @@ kong_apis:
   - name: listResourceBundles
     uris: "{{ meta_service_prefix }}/v1/resourcebundles/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/resourcebundles/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1165,7 +1165,7 @@ kong_apis:
   - name: listOrdinals
     uris: "{{ meta_service_prefix }}/v1/ordinals/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/ordinals/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1182,7 +1182,7 @@ kong_apis:
   - name: telemetry
     uris: "{{ data_service_prefix }}/v1/telemetry"
     upstream_url: "{{ telemetry_service_url }}/v1/telemetry"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1199,7 +1199,7 @@ kong_apis:
   - name: flagContent
     uris: "{{ content_prefix }}/v1/flag"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/flag"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1216,7 +1216,7 @@ kong_apis:
   - name: acceptContentFlag
     uris: "{{ content_prefix }}/v1/flag/accept"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/flag/accept"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1233,7 +1233,7 @@ kong_apis:
   - name: rejectContentFlag
     uris: "{{ content_prefix }}/v1/flag/reject"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/flag/reject"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1250,7 +1250,7 @@ kong_apis:
   - name: getCourseProgressDashboard
     uris: "{{ dashboard_service_prefix }}/v1/progress/course"
     upstream_url: "{{ lms_service_url }}/v1/dashboard/progress/course"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1267,7 +1267,7 @@ kong_apis:
   - name: getCourseProgressDashboardV2
     uris: "{{ dashboard_service_prefix }}/v2/progress/course"
     upstream_url: "{{ lms_service_url }}/v2/dashboard/progress/course"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1284,7 +1284,7 @@ kong_apis:
   - name: getCourseConsumptionDashboard
     uris: "{{ dashboard_service_prefix }}/v1/consumption/course"
     upstream_url: "{{ lms_service_url }}/v1/dashboard/consumption/course"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1301,7 +1301,7 @@ kong_apis:
   - name: getUserConsumptionDasbhoard
     uris: "{{ dashboard_service_prefix }}/v1/consumption/user"
     upstream_url: "{{ learning_service_url }}/v1/dashboard/consumption/user"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1318,7 +1318,7 @@ kong_apis:
   - name: userBulkUpload
     uris: "{{ user_service_prefix }}/v1/upload"
     upstream_url: "{{ learning_service_url }}/v1/user/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1335,7 +1335,7 @@ kong_apis:
   - name: orgBulkUpload
     uris: "{{ org_service_prefix }}/v1/upload"
     upstream_url: "{{ learning_service_url }}/v1/org/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1352,7 +1352,7 @@ kong_apis:
   - name: checkUploadJobStatus
     uris: "{{ data_service_prefix }}/v1/upload/status"
     upstream_url: "{{ learning_service_url }}/v1/upload/status"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1369,7 +1369,7 @@ kong_apis:
   - name: getUploadJobStatusLink
     uris: "{{ data_service_prefix }}/v1/upload/statusDownloadLink"
     upstream_url: "{{ learning_service_url }}/v1/upload/statusDownloadLink"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1386,7 +1386,7 @@ kong_apis:
   - name: createBatch
     uris: "{{ course_service_prefix }}/v1/batch/create"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1403,7 +1403,7 @@ kong_apis:
   - name: updateBatch
     uris: "{{ course_service_prefix }}/v1/batch/update"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1420,7 +1420,7 @@ kong_apis:
   - name: addUserToBatch
     uris: "{{ course_service_prefix }}/v1/batch/user/add"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/users/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1437,7 +1437,7 @@ kong_apis:
   - name: removeUserFromBatch
     uris: "{{ course_service_prefix }}/v1/batch/user/remove"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/users/remove"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1454,7 +1454,7 @@ kong_apis:
   - name: getBatch
     uris: "{{ course_service_prefix }}/v1/batch/read"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1471,7 +1471,7 @@ kong_apis:
   - name: getParticipants
     uris: "{{ course_service_prefix }}/v1/batch/participants/list"
     upstream_url: "{{ lms_service_url }}/v1/batch/participants/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1488,7 +1488,7 @@ kong_apis:
   - name: assignRole
     uris: "{{ user_service_prefix }}/v1/role/assign"
     upstream_url: "{{ learning_service_url }}/v1/user/assign/role"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1505,7 +1505,7 @@ kong_apis:
   - name: indexSync
     uris: "{{ data_service_prefix }}/v1/index/sync"
     upstream_url: "{{ learning_service_url }}/v1/data/sync"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1522,7 +1522,7 @@ kong_apis:
   - name: blockUser
     uris: "{{ user_service_prefix }}/v1/block"
     upstream_url: "{{ learning_service_url }}/v1/user/block"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1539,7 +1539,7 @@ kong_apis:
   - name: unblockUser
     uris: "{{ user_service_prefix }}/v1/unblock"
     upstream_url: "{{ learning_service_url }}/v1/user/unblock"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1556,7 +1556,7 @@ kong_apis:
   - name: uploadMedia
     uris: "{{ content_prefix }}/v1/media/upload"
     upstream_url: "{{ learning_service_url }}/v1/file/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1573,7 +1573,7 @@ kong_apis:
   - name: listCourseBatches
     uris: "{{ course_service_prefix }}/v1/batch/list"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1590,7 +1590,7 @@ kong_apis:
   - name: batchBulkEnrolment
     uris: "{{ course_service_prefix }}/v1/batch/bulk/enrollment"
     upstream_url: "{{ lms_service_url }}/v1/batch/bulk/enrollment"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1607,7 +1607,7 @@ kong_apis:
   - name: batchBulkUnEnrolment
     uris: "{{ course_service_prefix }}/v1/batch/bulk/unenrollment"
     upstream_url: "{{ lms_service_url }}/v1/batch/bulk/unenrollment"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1624,7 +1624,7 @@ kong_apis:
   - name: getTenantInfo
     uris: "{{ org_service_prefix }}/v1/tenant/info"
     upstream_url: "{{ player_service_url }}/v1/tenant/info"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1641,7 +1641,7 @@ kong_apis:
   - name: getContentUploadUrl
     uris: "{{ content_prefix }}/v1/upload/url/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/upload/url"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1658,7 +1658,7 @@ kong_apis:
   - name: rejectContent
     uris: "{{ content_prefix }}/v1/reject"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/reject"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1675,7 +1675,7 @@ kong_apis:
   - name: deleteNote
     uris: "{{ notes_service_prefix }}/v1/delete"
     upstream_url: "{{ learning_service_url }}/v1/note/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1692,7 +1692,7 @@ kong_apis:
   - name: sendEmailNotification
     uris: "{{ user_service_prefix }}/v1/notification/email"
     upstream_url: "{{ learning_service_url }}/v1/notification/email"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1709,7 +1709,7 @@ kong_apis:
   - name: listAllBadges
     uris: "{{ org_service_prefix }}/v1/badges/list"
     upstream_url: "{{ learning_service_url }}/v1/badges/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1726,7 +1726,7 @@ kong_apis:
   - name: addBadgeToUser
     uris: "{{ user_service_prefix }}/v1/badges/add"
     upstream_url: "{{ learning_service_url }}/v1/user/badges/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1743,7 +1743,7 @@ kong_apis:
   - name: listOrgTypes
     uris: "{{ org_service_prefix }}/v1/type/list"
     upstream_url: "{{ learning_service_url }}/v1/org/type/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1760,7 +1760,7 @@ kong_apis:
   - name: createOrgType
     uris: "{{ org_service_prefix }}/v1/type/create"
     upstream_url: "{{ learning_service_url }}/v1/org/type/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1777,7 +1777,7 @@ kong_apis:
   - name: updateOrgType
     uris: "{{ org_service_prefix }}/v1/type/update"
     upstream_url: "{{ learning_service_url }}/v1/org/type/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1794,7 +1794,7 @@ kong_apis:
   - name: updateUserloginTime
     uris: "{{ user_service_prefix }}/v1/update/logintime"
     upstream_url: "{{ learning_service_url }}/v1/user/update/logintime"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1811,7 +1811,7 @@ kong_apis:
   - name: getMediaTypes
     uris: "{{ user_service_prefix }}/v1/mediatype/list"
     upstream_url: "{{ learning_service_url }}/v1/user/mediatype/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1828,7 +1828,7 @@ kong_apis:
   - name: addUserSkill
     uris: "{{ user_service_prefix }}/v1/skill/add"
     upstream_url: "{{ learning_service_url }}/v1/user/skill/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1845,7 +1845,7 @@ kong_apis:
   - name: getUserSkill
     uris: "{{ user_service_prefix }}/v1/skill/read"
     upstream_url: "{{ learning_service_url }}/v1/user/skill/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1862,7 +1862,7 @@ kong_apis:
   - name: getSkills
     uris: "{{ data_service_prefix }}/v1/skills"
     upstream_url: "{{ learning_service_url }}/v1/skills"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1879,7 +1879,7 @@ kong_apis:
   - name: updateUserSkill
     uris: "{{ user_service_prefix }}/v1/skill/update"
     upstream_url: "{{ learning_service_url }}/v1/user/skill/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1896,7 +1896,7 @@ kong_apis:
   - name: addUserSkillEndorsement
     uris: "{{ user_service_prefix }}/v1/skill/endorse/add"
     upstream_url: "{{ learning_service_url }}/v1/user/skill/endorse/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1913,7 +1913,7 @@ kong_apis:
   - name: getAllData
     uris: "{{ data_service_prefix }}/v1/object/read/list"
     upstream_url: "{{ learning_service_url }}/v1/object/read/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1930,7 +1930,7 @@ kong_apis:
   - name: getData
     uris: "{{ data_service_prefix }}/v1/object/read"
     upstream_url: "{{ learning_service_url }}/v1/object/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1947,7 +1947,7 @@ kong_apis:
   - name: createData
     uris: "{{ data_service_prefix }}/v1/object/create"
     upstream_url: "{{ learning_service_url }}/v1/object/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1964,7 +1964,7 @@ kong_apis:
   - name: updateData
     uris: "{{ data_service_prefix }}/v1/object/update"
     upstream_url: "{{ learning_service_url }}/v1/object/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1981,7 +1981,7 @@ kong_apis:
   - name: deleteData
     uris: "{{ data_service_prefix }}/v1/object/delete"
     upstream_url: "{{ learning_service_url }}/v1/object/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -1998,7 +1998,7 @@ kong_apis:
   - name: searchData
     uris: "{{ data_service_prefix }}/v1/object/search"
     upstream_url: "{{ learning_service_url }}/v1/object/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2015,7 +2015,7 @@ kong_apis:
   - name: createLocation
     uris: "{{ org_service_prefix }}/v1/location/create"
     upstream_url: "{{ learning_service_url }}/v1/notification/location/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2032,7 +2032,7 @@ kong_apis:
   - name: getLocation
     uris: "{{ org_service_prefix }}/v1/location/read"
     upstream_url: "{{ learning_service_url }}/v1/notification/location/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2049,7 +2049,7 @@ kong_apis:
   - name: deleteLocation
     uris: "{{ org_service_prefix }}/v1/location/delete"
     upstream_url: "{{ learning_service_url }}/v1/notification/location/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2066,7 +2066,7 @@ kong_apis:
   - name: updateLocation
     uris: "{{ org_service_prefix }}/v1/location/update"
     upstream_url: "{{ learning_service_url }}/v1/notification/location/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2083,7 +2083,7 @@ kong_apis:
   - name: profileVisibility
     uris: "{{ user_service_prefix }}/v1/profile/visibility"
     upstream_url: "{{ learning_service_url }}/v1/user/profile/visibility"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2100,7 +2100,7 @@ kong_apis:
   - name: sendNotification
     uris: "{{ data_service_prefix }}/v1/notification/send"
     upstream_url: "{{ learning_service_url }}/v1/notification/send"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2117,7 +2117,7 @@ kong_apis:
   - name: metricsSearchData
     uris: "{{ data_service_prefix }}/v1/object/metrics"
     upstream_url: "{{ learning_service_url }}/v1/object/metrics"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2134,7 +2134,7 @@ kong_apis:
   - name: listSystemSettings
     uris: "{{ data_service_prefix }}/v1/system/settings/list"
     upstream_url: "{{ learning_service_url }}/v1/system/settings/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2151,7 +2151,7 @@ kong_apis:
   - name: getAudienceCount
     uris: "{{ data_service_prefix }}/v1/notification/audience"
     upstream_url: "{{ learning_service_url }}/v1/notification/audience"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2168,7 +2168,7 @@ kong_apis:
   - name: generateDialcodes
     uris: "{{ dialcode_service_prefix }}/v1/generate"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/generate"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2185,7 +2185,7 @@ kong_apis:
   - name: readDialcode
     uris: "{{ dialcode_service_prefix }}/v1/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2202,7 +2202,7 @@ kong_apis:
   - name: updateDialcode
     uris: "{{ dialcode_service_prefix }}/v1/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2219,7 +2219,7 @@ kong_apis:
   - name: listDialcodes
     uris: "{{ dialcode_service_prefix }}/v1/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2236,7 +2236,7 @@ kong_apis:
   - name: publishDialcode
     uris: "{{ dialcode_service_prefix }}/v1/publish"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/publish"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2253,7 +2253,7 @@ kong_apis:
   - name: searchDialcodes
     uris: "{{ dialcode_service_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2270,7 +2270,7 @@ kong_apis:
   - name: qrCodeBatchProcessStatus
     uris: "{{ dialcode_service_prefix }}/v1/process/status"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/process/status"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2287,7 +2287,7 @@ kong_apis:
   - name: qrCodeBatchProcessRetry
     uris: "{{ dialcode_service_prefix }}/v1/process/retry"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/process/retry"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2304,7 +2304,7 @@ kong_apis:
   - name: createPublisher
     uris: "{{ dialcode_service_prefix }}/v1/publisher/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/publisher/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2321,7 +2321,7 @@ kong_apis:
   - name: updatePublisher
     uris: "{{ dialcode_service_prefix }}/v1/publisher/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/publisher/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2338,7 +2338,7 @@ kong_apis:
   - name: readPublisher
     uris: "{{ dialcode_service_prefix }}/v1/publisher/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/publisher/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2355,7 +2355,7 @@ kong_apis:
   - name: linkDialcodeContent
     uris: "{{ dialcode_service_prefix }}/v1/content/link"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/content/link"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2372,7 +2372,7 @@ kong_apis:
   - name: readChannel
     uris: "{{ channel_service_prefix }}/v1/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/channel/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -2386,7 +2386,7 @@ kong_apis:
   - name: listChannel
     uris: "{{ channel_service_prefix }}/v1/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/channel/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2403,7 +2403,7 @@ kong_apis:
   - name: searchChannel
     uris: "{{ channel_service_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/channel/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2420,7 +2420,7 @@ kong_apis:
   - name: createChannel
     uris: "{{ channel_service_prefix }}/v1/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/channel/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2437,7 +2437,7 @@ kong_apis:
   - name: updateChannel
     uris: "{{ channel_service_prefix }}/v1/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/channel/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2454,7 +2454,7 @@ kong_apis:
   - name: readFramework
     uris: "{{ framework_service_prefix }}/v1/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -2468,7 +2468,7 @@ kong_apis:
   - name: listFramework
     uris: "{{ framework_service_prefix }}/v1/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2485,7 +2485,7 @@ kong_apis:
   - name: createFramework
     uris: "{{ framework_service_prefix }}/v1/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2502,7 +2502,7 @@ kong_apis:
   - name: updateFramework
     uris: "{{ framework_service_prefix }}/v1/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2519,7 +2519,7 @@ kong_apis:
   - name: copyFramework
     uris: "{{ framework_service_prefix }}/v1/copy"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/copy"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2536,7 +2536,7 @@ kong_apis:
   - name: readFrameworkTerm
     uris: "{{ framework_service_prefix }}/v1/term/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/term/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2553,7 +2553,7 @@ kong_apis:
   - name: searchFrameworkTerm
     uris: "{{ framework_service_prefix }}/v1/term/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/term/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2570,7 +2570,7 @@ kong_apis:
   - name: createFrameworkTerm
     uris: "{{ framework_service_prefix }}/v1/term/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/term/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2587,7 +2587,7 @@ kong_apis:
   - name: updateFrameworkTerm
     uris: "{{ framework_service_prefix }}/v1/term/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/term/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2604,7 +2604,7 @@ kong_apis:
   - name: readFrameworkCategory
     uris: "{{ framework_service_prefix }}/v1/category/read"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/category/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2621,7 +2621,7 @@ kong_apis:
   - name: searchFrameworkCategory
     uris: "{{ framework_service_prefix }}/v1/category/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/category/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2638,7 +2638,7 @@ kong_apis:
   - name: createFrameworkCategory
     uris: "{{ framework_service_prefix }}/v1/category/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/category/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2655,7 +2655,7 @@ kong_apis:
   - name: updateFrameworkCategory
     uris: "{{ framework_service_prefix }}/v1/category/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/category/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2672,7 +2672,7 @@ kong_apis:
   - name: updateCourseHierarchy
     uris: '{{ course_service_prefix }}/v1/hierarchy/update'
     upstream_url: '{{ knowledge_mw_service_url }}/v1/course/hierarchy/update'
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2689,7 +2689,7 @@ kong_apis:
   - name: createAssertion
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/assertion/create"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/assertion/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2706,7 +2706,7 @@ kong_apis:
   - name: getAssertion
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/assertion/read"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/assertion/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2723,7 +2723,7 @@ kong_apis:
   - name: getAssertionList
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/assertion/search"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/assertion/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2740,7 +2740,7 @@ kong_apis:
   - name: revokeAssertion
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/assertion/delete"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/assertion/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2757,7 +2757,7 @@ kong_apis:
   - name: createBadgeClass
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/create"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2774,7 +2774,7 @@ kong_apis:
   - name: getBadgeClass
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/read"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2791,7 +2791,7 @@ kong_apis:
   - name: searchBadgeClass
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/search"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2808,7 +2808,7 @@ kong_apis:
   - name: deleteBadgeClass
     uris: "{{ badge_service_prefix }}/v1/issuer/badge/delete"
     upstream_url: "{{ learning_service_url }}/v1/issuer/badge/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2825,7 +2825,7 @@ kong_apis:
   - name: createissuer
     uris: "{{ badge_service_prefix }}/v1/issuer/create"
     upstream_url: "{{ learning_service_url }}/v1/issuer/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2842,7 +2842,7 @@ kong_apis:
   - name: getIssuerDetails
     uris: "{{ badge_service_prefix }}/v1/issuer/read"
     upstream_url: "{{ learning_service_url }}/v1/issuer/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2859,7 +2859,7 @@ kong_apis:
   - name: getAllIssuer
     uris: "{{ badge_service_prefix }}/v1/issuer/list"
     upstream_url: "{{ learning_service_url }}/v1/issuer/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2876,7 +2876,7 @@ kong_apis:
   - name: deleteIssuer
     uris: "{{ badge_service_prefix }}/v1/issuer/delete"
     upstream_url: "{{ learning_service_url }}/v1/issuer/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2893,7 +2893,7 @@ kong_apis:
   - name: createForm
     uris: "{{ data_service_prefix }}/v1/form/create"
     upstream_url: "{{ player_service_url }}/plugin/v1/form/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2910,7 +2910,7 @@ kong_apis:
   - name: updateForm
     uris: "{{ data_service_prefix }}/v1/form/update"
     upstream_url: "{{ player_service_url }}/plugin/v1/form/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2927,7 +2927,7 @@ kong_apis:
   - name: readForm
     uris: "{{ data_service_prefix }}/v1/form/read"
     upstream_url: "{{ player_service_url }}/plugin/v1/form/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: cors
     - "{{ statsd_pulgin }}"
@@ -2941,7 +2941,7 @@ kong_apis:
   - name: masterLocationCreate
     uris: "{{ data_service_prefix }}/v1/location/create"
     upstream_url: "{{ learning_service_url }}/v1/location/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2958,7 +2958,7 @@ kong_apis:
   - name: masterLocationUpdate
     uris: "{{ data_service_prefix }}/v1/location/update"
     upstream_url: "{{ learning_service_url }}/v1/location/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2975,7 +2975,7 @@ kong_apis:
   - name: masterLocationSearch
     uris: "{{ data_service_prefix }}/v1/location/search"
     upstream_url: "{{ learning_service_url }}/v1/location/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -2992,7 +2992,7 @@ kong_apis:
   - name: masterLocationUpload
     uris: "{{ data_service_prefix }}/v1/bulk/location/upload"
     upstream_url: "{{ learning_service_url }}/v1/bulk/location/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3010,7 +3010,7 @@ kong_apis:
   - name: copyContent
     uris: "{{ content_prefix }}/v1/copy"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/copy"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3028,7 +3028,7 @@ kong_apis:
   - name: fetchURLMetaInformation
     uris: "{{ content_prefix }}/v1/fetchmeta"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/url/fetchmeta"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3045,7 +3045,7 @@ kong_apis:
   - name: publishFramework
     uris: "{{ framework_service_prefix }}/v1/publish"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/framework/publish"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3062,7 +3062,7 @@ kong_apis:
   - name: pluginSearch
     uris: "{{ plugin_service_prefix }}/v1/search"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/plugins/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3079,7 +3079,7 @@ kong_apis:
   - name: updateCollaborators
     uris: "{{ content_prefix }}/v1/collaborator/update"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/content/collaborator/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3096,7 +3096,7 @@ kong_apis:
   - name: reserveDialcode
     uris: "{{ dialcode_service_prefix }}/v1/reserve"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/reserve"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3113,7 +3113,7 @@ kong_apis:
   - name: releaseDialcode
     uris: "{{ dialcode_service_prefix }}/v1/release"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/dialcode/release"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3130,7 +3130,7 @@ kong_apis:
   - name: createLock
     uris: "{{ lock_service_prefix }}/v1/create"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/lock/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3147,7 +3147,7 @@ kong_apis:
   - name: refreshLock
     uris: "{{ lock_service_prefix }}/v1/refresh"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/lock/refresh"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3164,7 +3164,7 @@ kong_apis:
   - name: retireLock
     uris: "{{ lock_service_prefix }}/v1/retire"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/lock/retire"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3181,7 +3181,7 @@ kong_apis:
   - name: listLock
     uris: "{{ lock_service_prefix }}/v1/list"
     upstream_url: "{{ knowledge_mw_service_url }}/v1/lock/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3198,7 +3198,7 @@ kong_apis:
   - name: createSession
     uris: "{{ sso_service_prefix }}/v1/create/session"
     upstream_url: "{{ player_service_url }}/v1/sso/create/session"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3217,7 +3217,7 @@ kong_apis:
   - name: "deviceRegister"
     uris: "/v3/device/register"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/v1/device/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'cors'}
      - "{{ statsd_pulgin }}"
@@ -3227,7 +3227,7 @@ kong_apis:
   - name: "deviceProfile"
     uris: "/v3/device/profile"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/v1/device/profile"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'cors'}
      - "{{ statsd_pulgin }}"
@@ -3237,7 +3237,7 @@ kong_apis:
   - name: "experimentcreate"
     uris: "{{ data_service_prefix }}/v1/experiement/create"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/experiment/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3250,7 +3250,7 @@ kong_apis:
   - name: "experimentread"
     uris: "{{ data_service_prefix }}/v1/experiement/get"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/experiment/get"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3262,7 +3262,7 @@ kong_apis:
   - name: "addSystemSettings"
     uris: "{{ data_service_prefix }}/v1/system/settings/set"
     upstream_url: "{{ learning_service_url }}/v1/system/settings/set"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3274,7 +3274,7 @@ kong_apis:
   - name: "getSystemSettings"
     uris: "{{ data_service_prefix }}/v1/system/settings/get"
     upstream_url: "{{ learning_service_url }}/v1/system/settings/get"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3287,7 +3287,7 @@ kong_apis:
   - name: onboardConsumer
     uris: "{{ api_manager_perfix }}/v1/consumer/create/jwt"
     upstream_url: "{{ am_util_url }}/v1/consumer/create/jwt"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3304,7 +3304,7 @@ kong_apis:
   - name: KongConsumerApi
     uris: "{{ api_manager_perfix }}/v1/consumer"
     upstream_url: "{{ am_util_url }}/v1/consumer"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3321,7 +3321,7 @@ kong_apis:
   - name: uploadTOC
     uris: "{{ textbook_service_prefix }}/v1/toc/upload"
     upstream_url: "{{ lms_service_url }}/v1/textbook/toc/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3338,7 +3338,7 @@ kong_apis:
   - name: downloadTOC
     uris: "{{ textbook_service_prefix }}/v1/toc/download"
     upstream_url: "{{ lms_service_url }}/v1/textbook/toc/download"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3355,7 +3355,7 @@ kong_apis:
   - name: acceptTermsAndCondition
     uris: "{{ user_service_prefix }}/v1/tnc/accept"
     upstream_url: "{{ learning_service_url }}/v1/user/tnc/accept"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3372,7 +3372,7 @@ kong_apis:
   - name: generateOtp
     uris: "{{ otp_service_prefix }}/v1/generate"
     upstream_url: "{{ learning_service_url }}/v1/otp/generate"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3389,7 +3389,7 @@ kong_apis:
   - name: verifyOtp
     uris: "{{ otp_service_prefix }}/v1/verify"
     upstream_url: "{{ learning_service_url }}/v1/otp/verify"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3406,7 +3406,7 @@ kong_apis:
   - name: getUserByKey
     uris: "{{ user_service_prefix  }}/v1/get"
     upstream_url: "{{ learning_service_url }}/v1/user/get"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3424,7 +3424,7 @@ kong_apis:
   - name: registerMobileAppTeacherAid
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_app_teacheraid/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_app_teacheraid/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3442,7 +3442,7 @@ kong_apis:
   - name: registerMobileDeviceTeacherAid
     uris: "{{ api_manager_perfix }}/v1/consumer/mobile_device_teacheraid/credential/register"
     upstream_url: "{{ am_util_url }}/v1/consumer/mobile_device_teacheraid/credential/register"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3459,7 +3459,7 @@ kong_apis:
   - name: "contentBadgeLink"
     uris: "{{ badge_service_prefix }}/v1/content/link"
     upstream_url: "{{ lms_service_url }}/v1/content/link"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3471,7 +3471,7 @@ kong_apis:
   - name: "contentBadgeUnLink"
     uris: "{{ badge_service_prefix }}/v1/content/unlink"
     upstream_url: "{{ lms_service_url }}/v1/content/unlink"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3483,7 +3483,7 @@ kong_apis:
   - name: "privateUserUpdate"
     uris: "{{ user_service_prefix }}/private/v1/update"
     upstream_url: "{{ learning_service_url }}/private/user/v1/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3495,7 +3495,7 @@ kong_apis:
   - name: "getUserType"
     uris: "{{ user_service_prefix }}/v1/type/list"
     upstream_url: "{{ learning_service_url }}/v1/user/type/list"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3507,7 +3507,7 @@ kong_apis:
   - name: "masterLocationDelete"
     uris: "{{data_service_prefix }}/v1/location/delete"
     upstream_url: "{{ learning_service_url }}/v1/location/delete"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3519,7 +3519,7 @@ kong_apis:
   - name: "privateUserRead"
     uris: "{{ user_service_prefix }}/private/v1/read"
     upstream_url: "{{ learning_service_url }}/private/user/v1/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3531,7 +3531,7 @@ kong_apis:
   - name: privateUserAssignRole
     uris: "{{ user_service_prefix }}/private/v1/assign/role"
     upstream_url: "{{ learning_service_url }}/private/user/v1/assign/role"
-    strip_uris: true
+    strip_uri: true
     plugins:
      - {name: 'jwt'}
      - {name: 'cors'}
@@ -3543,7 +3543,7 @@ kong_apis:
   - name: "telemetryErrorLogging"
     uris: "/data/v1/client/logs"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/data/v1/client/logs"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - {name: 'cors'}
     - "{{ statsd_pulgin }}"
@@ -3553,7 +3553,7 @@ kong_apis:
   - name: generateCertificate
     uris: "{{ cert_service_prefix }}/v1/certs/generate"
     upstream_url: "{{ cert_service_url }}/v1/certs/generate"
-    strip_uris: true
+    strip_uri: true
     plugins:
       - name: jwt
       - name: cors
@@ -3570,7 +3570,7 @@ kong_apis:
   - name: createCertTemplate
     uris: "{{ cert_service_prefix }}/v1/template/create"
     upstream_url: "{{ cert_service_url }}/cert/v1/template/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
       - name: jwt
       - name: cors
@@ -3587,7 +3587,7 @@ kong_apis:
   - name: updateCertTemplate
     uris: "{{ cert_service_prefix }}/v1/template/update"
     upstream_url: "{{ cert_service_url }}/cert/v1/template/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
       - name: jwt
       - name: cors
@@ -3604,7 +3604,7 @@ kong_apis:
   - name: readCertTemplate
     uris: "{{ cert_service_prefix }}/v1/template/read"
     upstream_url: "{{ cert_service_url }}/cert/v1/template/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
       - name: jwt
       - name: cors
@@ -3621,7 +3621,7 @@ kong_apis:
   - name: "orgAssignKeys"
     uris: "{{ org_service_prefix }}/v1/assign/key"
     upstream_url: "{{ learning_service_url }}/v1/org/assign/key"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - {name: 'jwt'}
     - {name: 'cors'}
@@ -3633,7 +3633,7 @@ kong_apis:
   - name: "mergeUserAccounts"
     uris: "{{ user_service_prefix }}/v1/account/merge"
     upstream_url: "{{ learning_service_url }}/private/user/v1/account/merge"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - {name: 'jwt'}
     - {name: 'cors'}
@@ -3645,7 +3645,7 @@ kong_apis:
   - name: qrCodeDownload
     uris: "{{ course_service_prefix }}/v1/qrcode/download"
     upstream_url: "{{ lms_service_url }}/v1/course/qrcode/download"
-    strip_uris: true
+    strip_uri: true
     plugins:
       - name: jwt
       - name: cors
@@ -3662,7 +3662,7 @@ kong_apis:
   - name: courseIssueCertificate
     uris: "{{ course_service_prefix }}/batch/cert/v1/issue"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/cert/issue"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3679,7 +3679,7 @@ kong_apis:
   - name: courseBatchAddCertificateTemplate
     uris: "{{ course_service_prefix }}/batch/cert/v1/template/add"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/cert/template/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3696,7 +3696,7 @@ kong_apis:
   - name: courseBatchRemoveCertificateTemplate
     uris: "{{ course_service_prefix }}/batch/cert/v1/template/remove"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/cert/template/remove"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3713,7 +3713,7 @@ kong_apis:
   - name: downloadCertificate
     uris: "{{ user_service_prefix }}/v1/certs/download"
     upstream_url: "{{ learning_service_url }}/v1/user/certs/download"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3730,7 +3730,7 @@ kong_apis:
   - name: UserBulkUploadv2
     uris: "{{ user_service_prefix }}/v2/bulk/upload"
     upstream_url: "{{ learning_service_url }}/v2/bulk/user/upload"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3747,7 +3747,7 @@ kong_apis:
   - name: downloadRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/download"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/download"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3764,7 +3764,7 @@ kong_apis:
   - name: validateRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/validate"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/validate"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3781,7 +3781,7 @@ kong_apis:
   - name: addRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/add"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/add"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3798,7 +3798,7 @@ kong_apis:
   - name: userMigrate
     uris: "{{ user_service_prefix }}/v1/migrate"
     upstream_url: "{{ learning_service_url }}/v1/user/migrate"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3815,7 +3815,7 @@ kong_apis:
   - name: verifyRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/verify"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/verify"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3832,7 +3832,7 @@ kong_apis:
   - name: updateDesktopApp
     uris: "{{ desktop_app_prefix }}/v1/update"
     upstream_url: "{{ player_service_url }}/v1/desktop/update"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3849,7 +3849,7 @@ kong_apis:
   - name: uploadCrashLogs
     uris: "{{ desktop_app_prefix }}/v1/upload-crash-logs"
     upstream_url: "{{ player_service_url }}/v1/desktop/upload-crash-logs"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3866,7 +3866,7 @@ kong_apis:
   - name: userFeed
     uris: "{{ user_service_prefix }}/v1/feed"
     upstream_url: "{{ learning_service_url }}/v1/user/feed"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3883,7 +3883,7 @@ kong_apis:
   - name: freshDesk
     uris: "/tickets/v1/create"
     upstream_url: "{{ freshDesk_url }}/api/v2/tickets"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3903,7 +3903,7 @@ kong_apis:
   - name: LicenseAPI
     uris: "{{ license_api_prefix }}/v3"
     upstream_url: "{{ content_service_url }}/license/v3"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3920,7 +3920,7 @@ kong_apis:
   - name: userExistenceApi
     uris: "{{ user_service_prefix  }}/v1/exists"
     upstream_url: "{{ learning_service_url }}/v1/user/exists"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3937,7 +3937,7 @@ kong_apis:
   - name: createUserLearnerV3
     uris: "{{ user_service_prefix }}/v1/signup"
     upstream_url: "{{ learning_service_url }}/v1/user/signup"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3954,7 +3954,7 @@ kong_apis:
   - name: createUserVersion3
     uris: "{{ user_service_prefix }}/v3/create"
     upstream_url: "{{ learning_service_url }}/v3/user/create"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3972,7 +3972,7 @@ kong_apis:
   - name: searchRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/search"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/search"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
@@ -3990,7 +3990,7 @@ kong_apis:
   - name: readRegCertificate
     uris: "{{ cert_registry_service_prefix }}/v1/certs/read"
     upstream_url: "{{ cert_registry_service_url }}/certs/v1/registry/read"
-    strip_uris: true
+    strip_uri: true
     plugins:
     - name: jwt
     - name: cors
