@@ -20,4 +20,4 @@ export KONG_CLUSTER_LISTEN="$IP_ADDR:7946"
 
 echo "KONG_CLUSTER_LISTEN: $KONG_CLUSTER_LISTEN"
 
-kong start
+exec kong start
