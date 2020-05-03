@@ -2,7 +2,7 @@ FROM centos:6
 
 ENV KONG_VERSION 0.10.4
 
-RUN yum install -y wget https://kong.bintray.com/kong-rpm/centos/6/:kong-$KONG_VERSION.el6.noarch.rpm && yum clean all
+RUN yum install -y wget https://sunbirdpublic.blob.core.windows.net/installation/kong-$KONG_VERSION.el6.noarch.rpm && yum clean all
 
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64 && chmod +x /usr/local/bin/dumb-init
 
