@@ -160,23 +160,6 @@ kong_apis:
     - name: request-size-limiting
       config.allowed_payload_size: "{{ small_request_size_limit }}"
 
-  - name: PrivateContentRetireAPI
-    uris: "{{ private_content_prefix }}/v3/retire"
-    upstream_url: "{{ vm_learning_service_url }}/content/v3/retire"
-    strip_uri: true
-    plugins:
-    - name: jwt
-    - name: cors
-    - "{{ statsd_pulgin }}"
-    - name: acl
-      config.whitelist: "{{ PrivateContent_ACL | default(['privateContentMgmt']) }}"
-    - name: rate-limiting
-      config.policy: local
-      config.hour: "{{ medium_rate_limit_per_hour }}"
-      config.limit_by: credential
-    - name: request-size-limiting
-      config.allowed_payload_size: "{{ small_request_size_limit }}"
-
   - name: PrivateContentUploadAPI
     uris: "{{ private_content_prefix }}/v3/upload"
     upstream_url: "{{ vm_learning_service_url }}/content/v3/upload"
@@ -255,23 +238,6 @@ kong_apis:
     - "{{ statsd_pulgin }}"
     - name: acl
       config.whitelist: "{{ PrivateContentAPIs_ACL | default(['privateContentMgmt']) }}"
-    - name: rate-limiting
-      config.policy: local
-      config.hour: "{{ medium_rate_limit_per_hour }}"
-      config.limit_by: credential
-    - name: request-size-limiting
-      config.allowed_payload_size: "{{ small_request_size_limit }}"
-
-  - name: PrivateContentRetireAPI
-    uris: "{{ private_content_prefix }}/v3/retire"
-    upstream_url: "{{ vm_learning_service_url }}/content/v3/retire"
-    strip_uri: true
-    plugins:
-    - name: jwt
-    - name: cors
-    - "{{ statsd_pulgin }}"
-    - name: acl
-      config.whitelist: "{{ PrivateContent_ACL | default(['privateContentMgmt']) }}"
     - name: rate-limiting
       config.policy: local
       config.hour: "{{ medium_rate_limit_per_hour }}"
