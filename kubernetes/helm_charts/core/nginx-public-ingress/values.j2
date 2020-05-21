@@ -147,6 +147,11 @@ proxyconfig: |
       proxy_pass http://player;
     }
     location /auth/ {
+      # Enabling compression
+       gzip            on;
+       gzip_min_length 100000;
+       gzip_proxied    expired no-cache no-store private auth;
+       gzip_types application/javascript application/x-javascript text/css text/javascript;
       set $target {{ keycloak_url }};
       rewrite ^/auth/(.*) /auth/$1 break;
       proxy_pass $target;
