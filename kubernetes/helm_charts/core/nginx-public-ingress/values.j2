@@ -152,9 +152,9 @@ proxyconfig: |
        gzip_min_length 100000;
        gzip_proxied    expired no-cache no-store private auth;
        gzip_types application/javascript application/x-javascript text/css text/javascript;
-      set $target {{ keycloak_url }};
       rewrite ^/auth/(.*) /auth/$1 break;
-      proxy_pass $target;
+      proxy_set_header Connection "";
+      proxy_pass http://keycloak;
       proxy_set_header Host $host;
       proxy_set_header X-Real-IP {{ nginx_client_public_ip_header | d('$remote_addr') }};
       proxy_set_header X-Scheme $scheme;
@@ -618,6 +618,11 @@ nginxconfig: |
 
       upstream player {
           server player:3000;
+          keepalive 1000;
+      }
+      
+      upstream keycloak {
+          server {{ keycloak_lb_ip }}:80;
           keepalive 1000;
       }
 
