@@ -29,6 +29,7 @@ extraConfigMaps:
       reconnect_on_error "#{ENV['OUTPUT_RECONNECT_ON_ERROR']}"
       reload_on_failure "#{ENV['OUTPUT_RELOAD_ON_FAILURE']}"
       reload_connections "#{ENV['OUTPUT_RELOAD_CONNECTIONS']}"
+      request_timeout 10s
       <buffer>
         @type "#{ENV['OUTPUT_BUFFER_TYPE']}"
         path "#{ENV['OUTPUT_BUFFER_PATH']}"
