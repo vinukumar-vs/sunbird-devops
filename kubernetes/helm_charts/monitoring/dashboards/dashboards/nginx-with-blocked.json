@@ -28,7 +28,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom-fed",
+      "datasource": "Prometheus",
       "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
@@ -145,7 +145,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom-fed",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -243,7 +243,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom-fed",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -348,7 +348,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "prom-fed",
+        "datasource": "Prometheus",
         "definition": "label_values(nginx_http_requests_total, cluster)",
         "hide": 0,
         "includeAll": true,
