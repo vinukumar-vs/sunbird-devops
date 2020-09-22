@@ -160,7 +160,7 @@ spec:
         - name: config-volume
           mountPath: /etc/fluent/config.d
         - name: template-config
-          mountPath: /tmp
+          mountPath: /root
 {{- if .Values.extraVolumeMounts }}
 {{ toYaml .Values.extraVolumeMounts | indent 8 }}
 {{- end }}
