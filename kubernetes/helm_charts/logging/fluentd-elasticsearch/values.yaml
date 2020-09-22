@@ -75,6 +75,8 @@ elasticsearch:
   reconnectOnError: true
   reloadOnFailure: false
   reloadConnections: false
+  template_name: "fluentd_elasticsearch_template"
+  template_file: "/tmp/fluentd_template"
   buffer:
     enabled: true
     type: "file"
