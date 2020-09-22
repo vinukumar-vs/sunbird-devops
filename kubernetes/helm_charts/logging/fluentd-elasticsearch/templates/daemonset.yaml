@@ -123,6 +123,10 @@ spec:
           value: {{ .Values.elasticsearch.reloadOnFailure | quote }}
         - name: OUTPUT_RELOAD_CONNECTIONS
           value: {{ .Values.elasticsearch.reloadConnections | quote }}
+        - name: TEMPLATE_NAME
+          value: {{ .Values.elasticsearch.template_name | quote }}
+        - name: TEMPLATE_FILE
+          value: {{ .Values.elasticsearch.template_file | quote }}
         {{- if .Values.env }}
         {{- range $key, $value := .Values.env }}
         - name: {{ $key }}
