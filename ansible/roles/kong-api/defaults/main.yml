@@ -1202,7 +1202,7 @@ kong_apis:
 
   - name: downloadTOC
     uris: "{{ textbook_service_prefix }}/v1/toc/download"
-    upstream_url: "{{ lms_service_url }}/v1/textbook/toc/download"
+    upstream_url: "{{ lms_service_url_tmp }}/v1/textbook/toc/download"
     strip_uri: true
     plugins:
     - name: jwt
@@ -2695,7 +2695,7 @@ kong_apis:
 
   - name: qrCodeDownload
     uris: "{{ course_service_prefix }}/v1/qrcode/download"
-    upstream_url: "{{ lms_service_url }}/v1/course/qrcode/download"
+    upstream_url: "{{ lms_service_url_tmp }}/v1/course/qrcode/download"
     strip_uri: true
     plugins:
     - name: jwt
@@ -4232,7 +4232,7 @@ kong_apis:
 
   - name: uploadTOC
     uris: "{{ textbook_service_prefix }}/v1/toc/upload"
-    upstream_url: "{{ lms_service_url }}/v1/textbook/toc/upload"
+    upstream_url: "{{ lms_service_url_tmp }}/v1/textbook/toc/upload"
     strip_uri: true
     plugins:
     - name: jwt
