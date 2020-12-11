@@ -107,9 +107,9 @@ node {
                                     }
                                 }
                                 sh """
-                                      sed -i "s/${repo_name}.*//g" ${JENKINS_HOME}/tags/tags.txt
-                                      sed -i "/^\\\$/d" ${JENKINS_HOME}/tags/tags.txt
-                                      echo "$repo_name : $tagName" >> ${JENKINS_HOME}/tags/tags.txt
+                                      sed -i "s/${repo_name}.*//g" ${JENKINS_HOME}/tags/hotifxtags.txt
+                                      sed -i "/^\\\$/d" ${JENKINS_HOME}/tags/hotifxtags.txt
+                                      echo "$repo_name : $tagName" >> ${JENKINS_HOME}/tags/hotifxtags.txt
                                  """
                             }
                         }
@@ -117,9 +117,9 @@ node {
                 }
             }
             stage('Archive artifacts') {
-                sh "cp ${JENKINS_HOME}/tags/tags.txt ."
-                sh "sort tags.txt -o tags.txt && cat tags.txt"
-                archiveArtifacts artifacts: 'tags.txt', fingerprint: true
+                sh "cp ${JENKINS_HOME}/tags/hotifxtags.txt ."
+                sh "sort hotifxtags.txt -o hotifxtags.txt && cat hotifxtags.txt"
+                archiveArtifacts artifacts: 'hotifxtags.txt', fingerprint: true
             }
         }
     }
