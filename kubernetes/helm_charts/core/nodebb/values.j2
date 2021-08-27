@@ -26,6 +26,8 @@ strategy:
 nodebb_url: {{ sunbird_nodebb_url | default(proto+'://'+domain_name+'/discussions') }}
 mongo_nodebb_host: {{ mongo_nodebb_host }}
 
+{{ nodebb_liveness_readiness | to_nice_yaml }}
+
 autoscaling:
   enabled: {{ nodebb_autoscaling_enabled | default('false') }}
   minReplicas: {{ nodebb_autoscaling_minReplicas|default(1) }}
