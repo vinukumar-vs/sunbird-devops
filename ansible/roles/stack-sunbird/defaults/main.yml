@@ -618,7 +618,7 @@ nodebb_liveness_readiness:
   healthcheck: true
   readinessProbe:
     httpGet:
-      path: /api/user/uid/1
+      path: /discussions/api/user/uid/1
       port: 4567
     initialDelaySeconds: 15
     periodSeconds: 15
@@ -627,7 +627,7 @@ nodebb_liveness_readiness:
     successThreshold: 1
   livenessProbe:
     httpGet:
-      path: /api/user/uid/1
+      path: /discussions/api/user/uid/1
       port: 4567
     initialDelaySeconds: 15
     periodSeconds: 15
